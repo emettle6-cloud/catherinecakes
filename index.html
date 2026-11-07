@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CatherineCakes – Cakes, Pastries &amp; Snacks</title>
+<style>
+:root{--navy:#0a0e3a;--navy2:#1a1060;--pink:#ff2d8a;--cyan:#16d9f0;--vio:#8b5cf6;--ink:#141a3a;--mut:#6b7194;--bg:#f6f7ff;--card:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:70px}*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+.w{max-width:1100px;margin:auto;padding:0 20px}
+header{background:var(--navy);position:sticky;top:0;z-index:5}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-size:22px;font-weight:800;background:linear-gradient(90deg,var(--pink),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+nav .l{display:flex;gap:22px}nav a{color:#dfe3ff;text-decoration:none;font-size:14px}
+.cartb{background:none;border:0;color:#fff;font-size:22px;cursor:pointer;position:relative}
+.cartb b{position:absolute;top:-6px;right:-8px;background:var(--pink);font-size:11px;border-radius:9px;padding:1px 6px}
+.hero{background:radial-gradient(circle at 80% 40%,#3a1fa8,transparent 55%),var(--navy);color:#fff;padding:56px 0}
+.hero .w{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+.hero .eyebrow{color:#b7bdf0}
+h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:12px 0}
+h1 span{background:linear-gradient(90deg,var(--cyan),var(--vio),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#d6daff;max-width:440px;line-height:1.5}
+.btn{display:inline-block;border:0;border-radius:99px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;font-size:14px}
+.pk{background:var(--pink);color:#fff}.ol{border:2px solid #fff;color:#fff;background:none}
+.cake{font-size:150px;text-align:center;filter:drop-shadow(0 0 30px #8b5cf6)}
+.sec{padding:44px 0}.sec.alt{background:#fff}
+.eyebrow.b{color:var(--vio)}h2{margin:6px 0 20px;font-size:26px}
+.g{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.c{background:var(--card);border-radius:14px;padding:12px;text-align:center;box-shadow:0 4px 16px #1a106018}
+.t{height:90px;border-radius:10px;display:grid;place-items:center;font-size:46px;background:linear-gradient(135deg,#ffe3f1,#e3e6ff);margin-bottom:8px}
+.c small{color:var(--mut);display:block;font-size:12px}.c h3{font-size:14px;margin:4px 0}
+.pr{color:var(--pink);font-weight:800;margin:6px 0}
+.c .btn{width:100%;padding:9px;font-size:13px}
+.ban{background:linear-gradient(120deg,var(--navy2),#3a1fa8);color:#fff;border-radius:18px;padding:34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.ban h2{margin:8px 0}.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rv .c{text-align:left;font-size:14px}.st{color:#f5b301}
+.hw{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hw div{font-size:14px;color:var(--mut)}.hw b{display:block;color:var(--ink);margin:6px 0 2px}
+.hw i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;font-style:normal;color:#fff;font-size:20px}
+footer{background:var(--navy);color:#c9cdf5;padding:34px 0 20px;font-size:13px}
+footer .w{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+footer h4{color:#fff;margin:0 0 8px}footer p{margin:4px 0}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#fff;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:26px;text-decoration:none;z-index:4}
+.dr{position:fixed;inset:0;background:#0008;display:none;justify-content:flex-end;z-index:9}.dr.on{display:flex}
+.pn{background:#fff;width:min(400px,100%);height:100%;padding:20px;overflow:auto}
+.pn input,.pn select{width:100%;padding:11px;margin:5px 0 10px;border:1px solid #d5d8f0;border-radius:10px;font-size:14px}
+.ln{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #eee;font-size:14px}
+.ln button{border:1px solid #ccd;background:#fff;border-radius:6px;width:24px;cursor:pointer}
+#msg{font-size:13px;margin:10px 0;color:var(--vio);font-weight:600}
+@media(max-width:800px){.hero .w{grid-template-columns:1fr}.cake{font-size:100px}.g{grid-template-columns:repeat(3,1fr)}.rv,footer .w{grid-template-columns:1fr}.hw{grid-template-columns:1fr 1fr}nav .l{display:none}}
+</style></head><body>
+<header><div class="w"><nav><a class="logo" href="#">CatherineCakes</a>
+<div class="l"><a href="#shop">Shop</a><a href="#occ">Occasions</a><a href="#how">How it works</a><a href="#contact">Contact</a></div>
+<button class="cartb" onclick="openCart()" aria-label="Cart">🛒<b id="cnt">0</b></button></nav></div></header>
+
+<section class="hero"><div class="w"><div>
+<div class="eyebrow">Premium cakes, pastries &amp; snacks</div>
+<h1>Make Every Celebration Out of <span>This World</span></h1>
+<p>Delicious cakes, pastries and snacks for birthdays, weddings, engagements, parties and everyday cravings. Pay easily with Mobile Money.</p>
+<a class="btn pk" href="#shop">Order Your Cake →</a> <a class="btn ol" href="#shop">Explore Menu</a></div>
+<div class="cake">🎂</div></div></section>
+
+<section class="sec"><div class="w"><div class="eyebrow b">Our categories</div><h2>A Little Something for Every Craving</h2>
+<div class="g">
+<div class="c"><div class="t">🍰</div><h3>Cakes</h3><small>For every occasion</small></div>
+<div class="c"><div class="t">🧁</div><h3>Cupcakes</h3><small>Small treats, big joy</small></div>
+<div class="c"><div class="t">🥐</div><h3>Pastries</h3><small>Freshly baked daily</small></div>
+<div class="c"><div class="t">🥟</div><h3>Snacks</h3><small>Tasty bites, always</small></div>
+<div class="c"><div class="t">💍</div><h3>Wedding Cakes</h3><small>Elegance in every layer</small></div>
+<div class="c"><div class="t">🎁</div><h3>Packages</h3><small>More joy, less stress</small></div>
+</div></div></section>
+
+<section class="sec alt" id="shop"><div class="w"><div class="eyebrow b">Featured products</div><h2>Customer Favorites</h2>
+<div class="g" id="grid"></div></div></section>
+
+<section class="sec" id="occ"><div class="w"><h2>Perfect for Every Occasion</h2>
+<div class="g">
+<div class="c"><div class="t">🎂</div><h3>Birthday</h3><small>Make it memorable</small></div>
+<div class="c"><div class="t">💒</div><h3>Wedding</h3><small>A sweet beginning</small></div>
+<div class="c"><div class="t">💖</div><h3>Engagement</h3><small>Seal the moment</small></div>
+<div class="c"><div class="t">💼</div><h3>Corporate</h3><small>Impress &amp; delight</small></div>
+<div class="c"><div class="t">🎓</div><h3>Graduation</h3><small>Celebrate success</small></div>
+<div class="c"><div class="t">🍼</div><h3>Baby Shower</h3><small>Welcome little joy</small></div>
+</div></div></section>
+
+<section class="sec"><div class="w"><div class="ban"><div><div class="eyebrow" style="color:#b7bdf0">Build your celebration</div>
+<h2>Custom Cakes. Endless Possibilities.</h2><p style="max-width:460px;color:#d6daff">From classic designs to out-of-this-world creations, we bring your vision to life.</p>
+<a class="btn pk" href="https://wa.me/233241234567?text=Hi%20CatherineCakes%2C%20I%27d%20like%20a%20custom%20cake">Start Your Order →</a></div><div style="font-size:90px">🎂✨</div></div></div></section>
+
+<section class="sec alt"><div class="w"><div class="eyebrow b">Real reviews</div><h2>What Our Customers Say</h2><div class="rv">
+<div class="c"><div class="st">★★★★★</div><p>“The cake was absolutely beautiful and delicious! Everyone at the party loved it.”</p><b>Ama Serwaa</b> · Birthday</div>
+<div class="c"><div class="st">★★★★★</div><p>“Professional, friendly and on time. The cake was beyond our expectations.”</p><b>Kofi Mensah</b> · Wedding</div>
+<div class="c"><div class="st">★★★★★</div><p>“Fresh, tasty and beautifully packaged. Their snacks are the best I’ve had in Accra!”</p><b>Nana Ama</b> · Corporate</div></div></div></section>
+
+<section class="sec" id="how"><div class="w"><div class="eyebrow b">How it works</div><h2>Simple Steps to Sweet Moments</h2><div class="hw">
+<div><i style="background:var(--pink)">🛒</i><b>1. Choose</b>Pick your favorites</div>
+<div><i style="background:var(--vio)">✎</i><b>2. Customize</b>Add your personal touch</div>
+<div><i style="background:var(--cyan)">✓</i><b>3. Pay with MoMo</b>Approve the prompt on your phone</div>
+<div><i style="background:var(--pink)">♥</i><b>4. Celebrate</b>We bake, package and deliver</div></div></div></section>
+
+<footer id="contact"><div class="w"><div><a class="logo" href="#">CatherineCakes</a><p>Cakes • Pastries • Snacks</p></div>
+<div><h4>Contact Us</h4><p>+233 24 123 4567</p><p>hello@catherinecakes.com</p><p>Accra, Ghana</p></div>
+<div><h4>Opening Hours</h4><p>Mon – Sat: 8:00 AM – 8:00 PM</p><p>Sun: 9:00 AM – 5:00 PM</p></div></div>
+<div class="w" style="display:block;margin-top:18px">© 2026 CatherineCakes. All rights reserved.</div></footer>
+<a class="wa" href="https://wa.me/233241234567" aria-label="WhatsApp">💬</a>
+
+<div class="dr" id="dr"><div class="pn"><div style="display:flex;justify-content:space-between"><h2 style="margin:0">Your Cart</h2><button onclick="closeCart()" style="border:0;background:none;font-size:22px;cursor:pointer">✕</button></div>
+<div id="lines"></div><p><b>Total: <span id="tot">GH₵0</span></b></p>
+<input id="nm" placeholder="Full name"><input id="ph" placeholder="Mobile Money number (e.g. 0241234567)" inputmode="tel">
+<select id="nw"><option value="mtn">MTN MoMo</option><option value="telecel">Telecel Cash</option><option value="airteltigo">AirtelTigo Money</option></select>
+<input id="ad" placeholder="Delivery address / event date &amp; notes">
+<button class="btn pk" style="width:100%" onclick="pay()">Pay with Mobile Money</button><div id="msg"></div></div></div>
+
+<script>
+const P=[{id:'choc',n:'Chocolate Dream Cake',p:320,e:'🍫'},{id:'van',n:'Vanilla Bliss Cake',p:280,e:'🍰'},{id:'cup',n:'Assorted Cupcakes (6pcs)',p:120,e:'🧁'},{id:'puff',n:'Puff Pastries (6pcs)',p:90,e:'🥐'},{id:'pie',n:'Meat Pie (6pcs)',p:80,e:'🥟'},{id:'plat',n:'Snack Platter',p:150,e:'🍤'}];
+let cart={};const $=i=>document.getElementById(i);
+$('grid').innerHTML=P.map(x=>`<div class="c"><div class="t">${x.e}</div><h3>${x.n}</h3><div class="st">★★★★★</div><div class="pr">GH₵ ${x.p}</div><button class="btn pk" onclick="add('${x.id}')">Add to cart</button></div>`).join('');
+function add(id){cart[id]=(cart[id]||0)+1;draw();openCart()}
+function chg(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];draw()}
+function draw(){let t=0,n=0;$('lines').innerHTML=P.filter(x=>cart[x.id]).map(x=>{t+=x.p*cart[x.id];n+=cart[x.id];return`<div class="ln"><span>${x.e} ${x.n}</span><span><button onclick="chg('${x.id}',-1)">−</button> ${cart[x.id]} <button onclick="chg('${x.id}',1)">+</button></span></div>`}).join('')||'<p>Your cart is empty.</p>';$('tot').textContent='GH₵ '+t;$('cnt').textContent=n}
+function openCart(){draw();$('dr').classList.add('on')}function closeCart(){$('dr').classList.remove('on')}
+async function pay(){
+ const items=Object.entries(cart).map(([id,qty])=>({id,qty}));
+ if(!items.length)return $('msg').textContent='Add something to your cart first.';
+ if(!$('nm').value||$('ph').value.length<10)return $('msg').textContent='Enter your name and a valid MoMo number.';
+ $('msg').textContent='Sending payment prompt…';
+ try{
+  const r=await fetch('/api/charge',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:$('nm').value,phone:$('ph').value,network:$('nw').value,address:$('ad').value,items})});
+  const d=await r.json();if(!r.ok)throw 0;
+  $('msg').textContent=d.message||'Check your phone and approve the prompt (enter your MoMo PIN).';
+  const ref=d.reference;let k=0;const iv=setInterval(async()=>{k++;try{const s=await(await fetch('/api/charge?ref='+ref)).json();
+   if(s.status==='paid'){clearInterval(iv);cart={};draw();$('msg').textContent='✅ Payment received! We’ll contact you shortly.'}
+   if(s.status==='failed'||k>40){clearInterval(iv);if(s.status!=='paid')$('msg').textContent='Payment not completed. Please try again.'}}catch(e){}},4000);
+ }catch(e){$('msg').textContent='Demo preview: the payment prompt works once the site is live on Vercel with Supabase and Paystack connected.'}
+}
+</script></body></html>
