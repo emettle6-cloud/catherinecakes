@@ -2,27 +2,29 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CatherineCakes – Cakes, Pastries &amp; Snacks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0a0e3a;--navy2:#1a1060;--pink:#ff2d8a;--cyan:#16d9f0;--vio:#8b5cf6;--ink:#141a3a;--mut:#6b7194;--bg:#f6f7ff;--card:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-padding-top:70px}*{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+html{scroll-padding-top:90px}*{box-sizing:border-box}
+body{margin:0;font-family:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
 .w{max-width:1100px;margin:auto;padding:0 20px}
 header{background:var(--navy);position:sticky;top:0;z-index:5}
-nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
-.logo{font-size:22px;font-weight:800;background:linear-gradient(90deg,var(--pink),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:12px}
+.logo{font-family:"Baloo 2","Nunito",system-ui,sans-serif;font-size:22px;font-weight:800;background:linear-gradient(90deg,var(--pink),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
 nav .l{display:flex;gap:22px}nav a{color:#dfe3ff;text-decoration:none;font-size:14px}
+.lg{height:68px;width:auto;display:block}.lg.ft{height:84px}
 .cartb{background:none;border:0;color:#fff;font-size:22px;cursor:pointer;position:relative}
 .cartb b{position:absolute;top:-6px;right:-8px;background:var(--pink);font-size:11px;border-radius:9px;padding:1px 6px}
-.hero{background:radial-gradient(circle at 80% 40%,#3a1fa8,transparent 55%),var(--navy);color:#fff;padding:56px 0}
-.hero .w{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+.hero{background:linear-gradient(90deg,rgba(10,14,58,.88) 0%,rgba(10,14,58,.55) 42%,rgba(10,14,58,0) 70%),url(assets/hero.jpg) 70% center/cover no-repeat,var(--navy);color:#fff;padding:90px 0;min-height:540px;display:flex;align-items:center}
+.hero .w{width:100%}.hero .w>div{max-width:520px}
 .eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
 .hero .eyebrow{color:#b7bdf0}
+h1,h2,h3,.btn,.pr{font-family:"Baloo 2","Nunito",system-ui,sans-serif}
 h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:12px 0}
 h1 span{background:linear-gradient(90deg,var(--cyan),var(--vio),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:#d6daff;max-width:440px;line-height:1.5}
 .btn{display:inline-block;border:0;border-radius:99px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;font-size:14px}
 .pk{background:var(--pink);color:#fff}.ol{border:2px solid #fff;color:#fff;background:none}
-.cake{font-size:150px;text-align:center;filter:drop-shadow(0 0 30px #8b5cf6)}
 .sec{padding:44px 0}.sec.alt{background:#fff}
 .eyebrow.b{color:var(--vio)}h2{margin:6px 0 20px;font-size:26px}
 .g{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
@@ -47,9 +49,9 @@ footer h4{color:#fff;margin:0 0 8px}footer p{margin:4px 0}
 .ln{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #eee;font-size:14px}
 .ln button{border:1px solid #ccd;background:#fff;border-radius:6px;width:24px;cursor:pointer}
 #msg{font-size:13px;margin:10px 0;color:var(--vio);font-weight:600}
-@media(max-width:800px){.hero .w{grid-template-columns:1fr}.cake{font-size:100px}.g{grid-template-columns:repeat(3,1fr)}.rv,footer .w{grid-template-columns:1fr}.hw{grid-template-columns:1fr 1fr}nav .l{display:none}}
+@media(max-width:800px){.hero{background:linear-gradient(180deg,rgba(10,14,58,.82) 0%,rgba(10,14,58,.55) 100%),url(assets/hero.jpg) 78% center/cover no-repeat,var(--navy);padding:60px 0;min-height:480px}.lg{height:56px}nav{height:72px}.g{grid-template-columns:repeat(3,1fr)}.rv,footer .w{grid-template-columns:1fr}.hw{grid-template-columns:1fr 1fr}nav .l{display:none}}
 </style></head><body>
-<header><div class="w"><nav><a class="logo" href="#">CatherineCakes</a>
+<header><div class="w"><nav><a class="logo" href="#"><img class="lg" src="assets/logo.png" alt="CatherineCakes"></a>
 <div class="l"><a href="#shop">Shop</a><a href="#occ">Occasions</a><a href="#how">How it works</a><a href="#contact">Contact</a></div>
 <button class="cartb" onclick="openCart()" aria-label="Cart">🛒<b id="cnt">0</b></button></nav></div></header>
 
@@ -58,7 +60,7 @@ footer h4{color:#fff;margin:0 0 8px}footer p{margin:4px 0}
 <h1>Make Every Celebration Out of <span>This World</span></h1>
 <p>Delicious cakes, pastries and snacks for birthdays, weddings, engagements, parties and everyday cravings. Pay easily with Mobile Money.</p>
 <a class="btn pk" href="#shop">Order Your Cake →</a> <a class="btn ol" href="#shop">Explore Menu</a></div>
-<div class="cake">🎂</div></div></section>
+</div></section>
 
 <section class="sec"><div class="w"><div class="eyebrow b">Our categories</div><h2>A Little Something for Every Craving</h2>
 <div class="g">
@@ -98,7 +100,7 @@ footer h4{color:#fff;margin:0 0 8px}footer p{margin:4px 0}
 <div><i style="background:var(--cyan)">✓</i><b>3. Pay with MoMo</b>Approve the prompt on your phone</div>
 <div><i style="background:var(--pink)">♥</i><b>4. Celebrate</b>We bake, package and deliver</div></div></div></section>
 
-<footer id="contact"><div class="w"><div><a class="logo" href="#">CatherineCakes</a><p>Cakes • Pastries • Snacks</p></div>
+<footer id="contact"><div class="w"><div><a class="logo" href="#"><img class="lg ft" src="assets/logo.png" alt="CatherineCakes"></a><p>Cakes • Pastries • Snacks</p></div>
 <div><h4>Contact Us</h4><p>+233 24 123 4567</p><p>hello@catherinecakes.com</p><p>Accra, Ghana</p></div>
 <div><h4>Opening Hours</h4><p>Mon – Sat: 8:00 AM – 8:00 PM</p><p>Sun: 9:00 AM – 5:00 PM</p></div></div>
 <div class="w" style="display:block;margin-top:18px">© 2026 CatherineCakes. All rights reserved.</div></footer>
